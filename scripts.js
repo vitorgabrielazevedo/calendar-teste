@@ -6,6 +6,9 @@ const next = document.querySelector(".next");
 const todayBtn = document.querySelector(".today-btn");
 const gotoBtn = document.querySelector(".goto-btn");
 const dateInput = document.querySelector(".date-input");
+const addEventBtn = document.querySelector(".add-event");
+const addEventContainer = document.querySelector(".add-event-wrapper");
+const addEventCloseBtn = document.querySelector(".close");
 
 let today = new Date();
 let activeDay;
@@ -135,5 +138,19 @@ dateInput.addEventListener("input", (e) => {
 });
 
 gotoBtn.addEventListener("click", gotoDate);
+
+addEventBtn.addEventListener("click", () => {
+    addEventContainer.classList.toggle("active");
+});
+
+addEventCloseBtn.addEventListener("click", () => {
+    addEventContainer.classList.remove("active");
+});
+
+document.addEventListener("click", (e) => {
+    if (e.target !== addEventBtn && !addEventContainer.contains(e.target)) {
+        addEventContainer.classList.remove("active");
+    }
+});
 
 initCalendar();
