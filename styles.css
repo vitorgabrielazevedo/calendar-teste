@@ -285,8 +285,8 @@
     width: 95%;
     min-height: 70px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    /* flex-direction: column; */
     gap: 5px;
     padding: 0 20px;
     padding-left: 50px;
@@ -314,6 +314,7 @@
   .events .event i {
     color: var(--primary-clr);
     font-size: 0.5rem;
+    margin-right: 10px;
   }
   .events .event:hover i {
     color: #fff;
@@ -324,12 +325,13 @@
     color: #878895;
     margin-left: 15px;
     pointer-events: none;
+    display: block;
   }
   .events .event:hover .event-time {
     color: #fff;
   }
   /* add tick in event after */
-  .events .event::after {
+  /* .events .event::after {
     content: "✓";
     position: absolute;
     top: 50%;
@@ -345,7 +347,7 @@
   }
   .events .event:hover::after {
     display: flex;
-  }
+  } */
   .add-event {
     position: absolute;
     bottom: 30px;
